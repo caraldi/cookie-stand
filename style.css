@@ -15,7 +15,7 @@ h1 {
   font-size: 45px;
   color: #ffffff;
   text-align: left;
-  padding-left: 325px;
+  padding-left: 400px;
 }
 
 div.centered {
@@ -34,7 +34,6 @@ div.navbar {
   margin: auto;
   width: 100%;
   height: auto;
-  text-align: center;
   font-family: 'Petit Formal Script', cursive;
   font-size: 25px;
   color: #ffffff;
@@ -45,8 +44,12 @@ div.navbar {
 
 ul {
   list-style-type: none;
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: center;
   text-align: center;
 }
