@@ -1,0 +1,101 @@
+body {
+  background-color: #ffd3ae
+}
+
+div.container {
+  width: auto;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+  opacity: 0.4;
+}
+
+div.headline {
+  position: absolute;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  border: 2px dotted #ffffff;
+  background-color: #ff6842;
+}
+
+button.facebook {
+  float: left;
+  margin-left: 395px;
+  font-family: 'Petit Formal Script', cursive;
+  font-size: 25px;
+  color: #ffffff;
+  border: 2px dotted #ffffff;
+  background-color: #00d8c8;
+}
+
+button.instagram {
+  float: left;
+  margin-left: 60px;
+  margin-bottom: 20px;
+  font-family: 'Petit Formal Script', cursive;
+  font-size: 25px;
+  color: #ffffff;
+  border: 2px dotted #ffffff;
+  background-color: #00d8c8;
+}
+
+h1 {
+  font-family: 'Petit Formal Script', cursive;
+  font-size: 45px;
+  color: #ffffff;
+  text-align: left;
+  padding-left: 400px;
+}
+
+h2 {
+  font-family: 'Petit Formal Script', cursive;
+  font-size: 45px;
+  color: #ffffff;
+  text-align: left;
+}
+
+div.content {
+  position: relative;
+  margin-right: -20px;
+  margin-left: auto;
+  margin-top: -700px;
+  margin-bottom: -500px;
+  width: auto;
+  height: auto;
+  padding-left: 400px;
+  padding-right: 20px;
+  text-align: left;
+  font-family: 'Lucida Sans Unicode', sans-serif;
+  font-size: 15px;
+  color: #835b32;
+  border: 2px dotted #ffffff;
+  background-color: #00d8c8;
+}
+
+div.navbar {
+  position: relative;
+  margin-top: 800px;
+  width: 100%;
+  height: auto;
+  font-family: 'Petit Formal Script', cursive;
+  font-size: 25px;
+  color: #ffffff;
+  border: 2px dotted #ffffff;
+  background-color: #ff6842;
+  list-style: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: center;
+  text-align: center;
+}
