@@ -55,7 +55,6 @@ h2 {
   font-size: 45px;
   color: #ffffff;
   text-align: left;
-  padding-left: 400px;
 }
 
 div.content {
@@ -64,11 +63,11 @@ div.content {
   margin-left: auto;
   margin-top: -700px;
   margin-bottom: -500px;
-  width: 855px;
+  width: auto;
   height: auto;
-  padding-left: 50px;
-  padding-right: 50px;
-  text-align: center;
+  padding-left: 400px;
+  padding-right: 20px;
+  text-align: left;
   font-family: 'Lucida Sans Unicode', sans-serif;
   font-size: 15px;
   color: #835b32;
@@ -77,8 +76,8 @@ div.content {
 }
 
 div.navbar {
-  position: absolute;
-  margin: auto;
+  position: relative;
+  margin-top: 800px;
   width: 100%;
   height: auto;
   font-family: 'Petit Formal Script', cursive;
