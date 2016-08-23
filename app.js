@@ -17,10 +17,10 @@ salesHead.appendChild(tableRow);
 salesTable.appendChild(salesHead);
 
 //creating tbody
-var bodyContent = [4875, 78];
-var tbody     = document.createElement('tbody');
-var bodyRow   = document.createElement('tr');
-var rowHeader = document.createElement('th');
+var bodyContent = [];
+var tbody       = document.createElement('tbody');
+var bodyRow     = document.createElement('tr');
+var rowHeader   = document.createElement('th');
 
 rowHeader.textContent = 'Pike Place';
 bodyRow.appendChild(rowHeader);
