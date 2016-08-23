@@ -21,10 +21,12 @@ var pike = {
   },
   render: function() {
     var ul = document.createElement('ul');
+
     var h2 = document.createElement('h2');
     var main = document.getElementById('store_info');
 
     h2.textContent = 'Pike';
+
 
     ul.appendChild(h2);
 
@@ -58,19 +60,30 @@ var seaTac = {
   },
   cookiesPerDay: function() {
     for (var i = 0; i < 14; i++) {
-      this.totalCookies += this.cookiesPerHour();
+      var hourlyCookies = this.cookiesPerHour();
+      this.totalCookies += hourlyCookies;
+      this.hoursArray.push(hourlyCookies);
     }
   },
   render: function() {
     var ul = document.createElement('ul');
-    var li = document.createElement('li');
+
     var h2 = document.createElement('h2');
     var main = document.getElementById('store_info');
 
     h2.textContent = 'SeaTac';
-    li.textContent = 'Total: ' + this.totalCookies;
+
 
     ul.appendChild(h2);
+
+    for (var j = 0; j < 14; j++) {
+      var hourLi = document.createElement('li');
+      hourLi.textContent = this.hoursArray[j];
+      ul.appendChild(hourLi);
+    }
+
+    var li = document.createElement('li');
+    li.textContent = 'Total: ' + this.totalCookies;
     ul.appendChild(li);
 
     main.appendChild(ul);
@@ -93,19 +106,30 @@ var seaCenter = {
   },
   cookiesPerDay: function() {
     for (var i = 0; i < 14; i++) {
-      this.totalCookies += this.cookiesPerHour();
+      var hourlyCookies = this.cookiesPerHour();
+      this.totalCookies += hourlyCookies;
+      this.hoursArray.push(hourlyCookies);
     }
   },
   render: function() {
     var ul = document.createElement('ul');
-    var li = document.createElement('li');
+
     var h2 = document.createElement('h2');
     var main = document.getElementById('store_info');
 
     h2.textContent = 'Seattle Center';
-    li.textContent = 'Total: ' + this.totalCookies;
+
 
     ul.appendChild(h2);
+
+    for (var j = 0; j < 14; j++) {
+      var hourLi = document.createElement('li');
+      hourLi.textContent = this.hoursArray[j];
+      ul.appendChild(hourLi);
+    }
+
+    var li = document.createElement('li');
+    li.textContent = 'Total: ' + this.totalCookies;
     ul.appendChild(li);
 
     main.appendChild(ul);
@@ -128,19 +152,30 @@ var capHill = {
   },
   cookiesPerDay: function() {
     for (var i = 0; i < 14; i++) {
-      this.totalCookies += this.cookiesPerHour();
+      var hourlyCookies = this.cookiesPerHour();
+      this.totalCookies += hourlyCookies;
+      this.hoursArray.push(hourlyCookies);
     }
   },
   render: function() {
     var ul = document.createElement('ul');
-    var li = document.createElement('li');
+
     var h2 = document.createElement('h2');
     var main = document.getElementById('store_info');
 
     h2.textContent = 'Capitol Hill';
-    li.textContent = 'Total: ' + this.totalCookies;
+
 
     ul.appendChild(h2);
+
+    for (var j = 0; j < 14; j++) {
+      var hourLi = document.createElement('li');
+      hourLi.textContent = this.hoursArray[j];
+      ul.appendChild(hourLi);
+    }
+
+    var li = document.createElement('li');
+    li.textContent = 'Total: ' + this.totalCookies;
     ul.appendChild(li);
 
     main.appendChild(ul);
@@ -163,19 +198,30 @@ var alki = {
   },
   cookiesPerDay: function() {
     for (var i = 0; i < 14; i++) {
-      this.totalCookies += this.cookiesPerHour();
+      var hourlyCookies = this.cookiesPerHour();
+      this.totalCookies += hourlyCookies;
+      this.hoursArray.push(hourlyCookies);
     }
   },
   render: function() {
     var ul = document.createElement('ul');
-    var li = document.createElement('li');
+
     var h2 = document.createElement('h2');
     var main = document.getElementById('store_info');
 
     h2.textContent = 'Alki';
-    li.textContent = 'Total: ' + this.totalCookies;
+
 
     ul.appendChild(h2);
+
+    for (var j = 0; j < 14; j++) {
+      var hourLi = document.createElement('li');
+      hourLi.textContent = this.hoursArray[j];
+      ul.appendChild(hourLi);
+    }
+
+    var li = document.createElement('li');
+    li.textContent = 'Total: ' + this.totalCookies;
     ul.appendChild(li);
 
     main.appendChild(ul);
