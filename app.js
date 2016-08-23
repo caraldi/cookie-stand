@@ -1,5 +1,34 @@
 'use strict';
 
+function Store(name, avg, min, max) {
+  this.name = name;
+  this.avgCookies = avg;
+  this.minCust = min;
+  this.maxCust = max;
+}
+
+var pike = new Store('Pike Place', 6.3, 23, 65);
+var seaTac = new Store('SeaTac', 1.2, 3, 24);
+var seaCenter = new Store();
+var capHill = new Store();
+var
+
+  this.generateRandom = function() {
+    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust);
+  };
+  // //Calculates number of cookies sold per each hour open
+  // this.cookiesPerHour = function() {
+  //   return this.generateRandom() * this.avgCookies;
+  // };
+  // //Calculates total number of cookies sold per day and displays array with number of cookies sold per each hour (var i represents the operating hours of the store)
+  // this.cookiesPerDay = function() {
+  //   for (var i = 0; i < 14; i++) {
+  //     this.hoursArray[i][1] = Math.floor(this.cookiesPerHour());
+  //     this.totalCookies += this.hoursArray[i][1];
+  //   }
+  //   this.hoursArray[(this.hoursArray.length - 1)][1] = this.totalCookies;
+  // };
+
 var salesTable = document.createElement('table');
 
 //creating thead
@@ -38,30 +67,6 @@ salesTable.appendChild(tbody);
 var main = document.getElementById('sales_data');
 main.appendChild(salesTable);
 
-
-//Pike location
-var pike = {
-  minCust: 23,
-  maxCust: 65,
-  avgCookies: 6.3,
-  hoursArray: displayHours(),
-  totalCookies: 0,
-  //Generates number of customers per hour
-  generateRandom: function() {
-    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust);
-  },
-  //Calculates number of cookies sold per each hour open
-  cookiesPerHour: function() {
-    return this.generateRandom() * this.avgCookies;
-  },
-  //Calculates total number of cookies sold per day and displays array with number of cookies sold per each hour (var i represents the operating hours of the store)
-  cookiesPerDay: function() {
-    for (var i = 0; i < 14; i++) {
-      this.hoursArray[i][1] = Math.floor(this.cookiesPerHour());
-      this.totalCookies += this.hoursArray[i][1];
-    }
-    this.hoursArray[(this.hoursArray.length - 1)][1] = this.totalCookies;
-  },
   //Renders number of cookies sold per each hour of operation and total cookies sold per day for store location
   render: function() {
     var h2 = document.createElement('h2');
@@ -88,14 +93,6 @@ var pike = {
 pike.cookiesPerDay();
 pike.render();
 
-//SeaTac location
-var seaTac = {
-  minCust: 3,
-  maxCust: 24,
-  avgCookies: 1.2,
-  hoursArray: displayHours(),
-  totalCookies: 0,
-  //Generates number of customers per hour
   generateRandom: function() {
     return Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust);
   },
