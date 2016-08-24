@@ -29,69 +29,69 @@ var seaCenter = new Store('Seattle Center', 3.7, 11, 38);
 var capHill = new Store('Capitol Hill', 2.3, 20, 38);
 var alki = new Store('Alki', 4.6, 2, 16);
 
-// var salesTable = document.createElement('table');
-//
-// //creating thead
-// var headerContent = ['', '6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', 'Daily Location Total'];
-// var salesHead     = document.createElement('thead');
-// var tableRow      = document.createElement('tr');
-//
-// for(var i = 0; i < headerContent.length; i++) {
-//   var th = document.createElement('th');
-//   th.textContent = headerContent[i];
-//   tableRow.appendChild(th);
-// }
-//
-// salesHead.appendChild(tableRow);
-// salesTable.appendChild(salesHead);
-//
-// //creating tbody
-// var bodyContent = [];
-// var tbody       = document.createElement('tbody');
-// var bodyRow     = document.createElement('tr');
-// var rowHeader   = document.createElement('th');
-//
-// rowHeader.textContent = 'Pike Place';
-// bodyRow.appendChild(rowHeader);
-//
-// for(var i = 0; i < bodyContent.length; i++) {
-//   var td = document.createElement('td');
-//   td.textContent = bodyContent[i];
-//   bodyRow.appendChild(td);
-// };
-//
-// tbody.appendChild(bodyRow);
-// salesTable.appendChild(tbody);
-//
-// //adding table to dom
-// var main = document.getElementById('sales_data');
-// main.appendChild(salesTable);
+var salesTable = document.createElement('table');
+
+//creating thead
+var headerContent = ['', '6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', 'Daily Location Total'];
+var salesHead     = document.createElement('thead');
+var tableRow      = document.createElement('tr');
+
+for(var i = 0; i < headerContent.length; i++) {
+  var th = document.createElement('th');
+  th.textContent = headerContent[i];
+  tableRow.appendChild(th);
+}
+
+salesHead.appendChild(tableRow);
+salesTable.appendChild(salesHead);
+
+//creating tbody
+var bodyContent = [];
+var tbody       = document.createElement('tbody');
+var bodyRow     = document.createElement('tr');
+var rowHeader   = document.createElement('th');
+
+rowHeader.textContent = 'Pike Place';
+bodyRow.appendChild(rowHeader);
+
+for(var i = 0; i < bodyContent.length; i++) {
+  var td = document.createElement('td');
+  td.textContent = bodyContent[i];
+  bodyRow.appendChild(td);
+};
+
+tbody.appendChild(bodyRow);
+salesTable.appendChild(tbody);
+
+//adding table to dom
+var main = document.getElementById('sales_data');
+main.appendChild(salesTable);
 
   //Renders number of cookies sold per each hour of operation and total cookies sold per day for store location
-  render: function() {
-    var h2 = document.createElement('h2');
-    var ul = document.createElement('ul');
-    var li = document.createElement('li');
-
-    this.cookiesPerDay();
-    h2.textContent = 'Pike';
-    li.textContent = 'Total: ' + this.totalCookies;
-
-    ul.appendChild(h2);
-    ul.appendChild(li);
-
-    var main = document.getElementById('store_info');
-    main.appendChild(ul);
-
-    for (var j = 0; j < 14; j++) {
-      var hourLi = document.createElement('li');
-      hourLi.textContent = this.hoursArray[j][0] + ': ' + this.hoursArray[j][1];
-      ul.appendChild(hourLi);
-    }
-  }
-};
-pike.cookiesPerDay();
-pike.render();
+//   render: function() {
+//     var h2 = document.createElement('h2');
+//     var ul = document.createElement('ul');
+//     var li = document.createElement('li');
+//
+//     this.cookiesPerDay();
+//     h2.textContent = 'Pike';
+//     li.textContent = 'Total: ' + this.totalCookies;
+//
+//     ul.appendChild(h2);
+//     ul.appendChild(li);
+//
+//     var main = document.getElementById('store_info');
+//     main.appendChild(ul);
+//
+//     for (var j = 0; j < 14; j++) {
+//       var hourLi = document.createElement('li');
+//       hourLi.textContent = this.hoursArray[j][0] + ': ' + this.hoursArray[j][1];
+//       ul.appendChild(hourLi);
+//     }
+//   }
+// };
+// pike.cookiesPerDay();
+// pike.render();
 
 // //Function to display number of cookies sold per each hour of operation as nested array
 // function displayHours() {
