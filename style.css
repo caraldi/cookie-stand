@@ -2,43 +2,21 @@ body {
   background-color: #ffd3ae
 }
 
-div.container {
-  position: relative;
-  margin: auto;
-}
-
-img {
-  position: relative;
-  opacity: 0.4;
-  z-index: 8;
-}
-
-div.headline {
-  position: absolute;
-  display: inline;
-  margin-bottom: 100px;
+.page {
+  margin: 0 auto;
   width: 100%;
-  text-align: center;
+}
+
+#salmon {
+  position: absolute;
+  opacity: 0.4;
+}
+
+header {
+  position: relative;
+  display: inline-block;
+  width: 100%;
   background-color: #ff6842;
-}
-
-button.facebook {
-  float: left;
-  margin-left: 20px;
-  font-family: 'Petit Formal Script', cursive;
-  font-size: 20px;
-  color: #835b32;
-  background-color: #00d8c8;
-}
-
-button.instagram {
-  float: left;
-  margin-left: 60px;
-  margin-bottom: 20px;
-  font-family: 'Petit Formal Script', cursive;
-  font-size: 20px;
-  color: #835b32;
-  background-color: #00d8c8;
 }
 
 h1 {
@@ -46,53 +24,62 @@ h1 {
   font-size: 45px;
   color: #ffffff;
   text-align: left;
-  padding-left: 20px;
+  padding-left: 400px;
 }
 
-h2 {
-  font-family: 'Petit Formal Script', cursive;
-  font-size: 45px;
-  color: #ffffff;
-  text-align: left;
-}
-
-div.content {
+.button {
   position: relative;
-  margin-right: -20px;
-  margin-left: auto;
-  margin-top: -700px;
-  margin-bottom: -500px;
-  width: auto;
-  height: auto;
-  padding-left: 350px;
-  padding-right: 20px;
-  text-align: left;
-  font-family: 'Lucida Sans Unicode', sans-serif;
-  font-size: 15px;
-  color: #835b32;
-  background-color: #00d8c8;
+  float: right;
+  bottom: 20px;
+  right: 250px;
+  margin-right: 100px;
 }
 
-div.navbar {
-  position: relative;
-  margin-top: 840px;
-  width: 100%;
-  height: auto;
-  font-family: 'Petit Formal Script', cursive;
-  font-size: 25px;
-  color: #ffffff;
-  background-color: #ff6842;
-  list-style: none;
+.nav {
+  float: right;
 }
 
 ul {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
 }
 
 li {
-  float: center;
-  text-align: center;
+  position: relative;
+  display: inline-block;
+  font-family: 'Petit Formal Script', cursive;
+  font-size: 20px;
+  color: #00d8c8;
+  bottom: 18px;
+  left: 355px;
+}
+
+#about {
+  padding-right: 40px;
+}
+
+#shop {
+  padding-right: 40px;
+}
+
+#locations {
+  padding-right: 40px;
+}
+
+.content {
+  font-family: 'Lucida Sans Unicode', sans-serif;
+  font-size: 16px;
+  color: #835b32;
+  text-align: left;
+  background-color: #00d8c8;
+  margin-top: 100px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding-right: 50px;
+  padding-left: 350px;
+}
+
+h2 {
+  font-family: 'Petit Formal Script', cursive;
+  font-size: 40px;
+  color: #ffffff;
 }
