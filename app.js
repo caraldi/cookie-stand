@@ -19,7 +19,6 @@ function Store(name, avg, min, max) {
   this.maxCust = max;
   this.totalCookies = 0;
   this.hoursArray = ['6:00 am', '7:00 am', '8:00 am', '9:00 am', '10:00 am', '11:00 am', '12:00 pm', '1:00 pm', '2:00 pm', '3:00 pm', '4:00 pm', '5:00 pm', '6:00 pm', '7:00 pm'];
-  this.hourlyCookies = [];
 };
 
 //Creating prototype of Store object allows method of object to be applied in more than one instance and save memory
@@ -36,9 +35,10 @@ Store.prototype.cookiesPerHour = function() {
 
 //Method for generating number of total cookies sold per day
 Store.prototype.cookiesPerDay = function() {
-  var hourlySales;
+  this.hourlyCookies = [];
 
   for (var i = 0; i < this.hoursArray.length; i++) {
+    var hourlySales;
     hourlySales = this.cookiesPerHour();
     this.hourlyCookies.push(hourlySales);
     this.totalCookies += hourlySales;
@@ -52,7 +52,6 @@ Store.prototype.renderData = function() {
 //Render sales data as td elements in tr of tbody
   var bodyRow     = document.createElement('tr');
   var rowHeader   = document.createElement('th');
-  var hourlyData   = document.createElement('td');
   var storeTotal  = document.createElement('td');
 
 //Loop through each location's data and use it to render tr in tbody
@@ -65,6 +64,7 @@ Store.prototype.renderData = function() {
 
 // Loop through hourly sales to display as hourlyData td content
   for(var j = 0; j < this.hourlyCookies.length; j++) {
+    var hourlyData   = document.createElement('td');
 // Add hourly sales data to td
     tableData.textContent = this.hourlyCookies[j];
 // Append hourlyData td to th
@@ -82,6 +82,7 @@ Store.prototype.renderData = function() {
 // Create table to display location data with hours of operation as columns, store location names as rows, including td created by renderData function
 function createTable() {
   var salesTable   = document.createElement('table');
+  
   var salesHead    = document.createElement('thead');
   var headRow      = document.createElement('tr');
   var tableHeader  = document.createElement('th');
