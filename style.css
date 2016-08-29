@@ -2,44 +2,21 @@ body {
   background-color: #ffd3ae
 }
 
-div.container {
-  width: auto;
-  height: auto;
-  margin-right: auto;
-  margin-left: auto;
+.page {
+  margin: 0 auto;
+  width: 100%;
+}
+
+#salmon {
+  position: absolute;
   opacity: 0.4;
 }
 
-div.headline {
-  position: absolute;
-  margin-right: auto;
-  margin-left: auto;
+header {
+  position: relative;
+  display: inline-block;
   width: 100%;
-  height: auto;
-  text-align: center;
-  border: 2px dotted #ffffff;
   background-color: #ff6842;
-}
-
-button.facebook {
-  float: left;
-  margin-left: 395px;
-  font-family: 'Petit Formal Script', cursive;
-  font-size: 25px;
-  color: #835b32;
-  border: 2px dotted #ffffff;
-  background-color: #00d8c8;
-}
-
-button.instagram {
-  float: left;
-  margin-left: 60px;
-  margin-bottom: 20px;
-  font-family: 'Petit Formal Script', cursive;
-  font-size: 25px;
-  color: #835b32;
-  border: 2px dotted #ffffff;
-  background-color: #00d8c8;
 }
 
 h1 {
@@ -50,52 +27,59 @@ h1 {
   padding-left: 400px;
 }
 
-h2 {
-  font-family: 'Petit Formal Script', cursive;
-  font-size: 45px;
-  color: #ffffff;
-  text-align: left;
+.button {
+  position: relative;
+  float: right;
+  bottom: 20px;
+  right: 250px;
+  margin-right: 100px;
 }
 
-div.content {
-  position: relative;
-  margin-right: -20px;
-  margin-left: auto;
-  margin-top: -700px;
-  margin-bottom: -500px;
-  width: auto;
-  height: auto;
-  padding-left: 400px;
-  padding-right: 20px;
-  text-align: left;
-  font-family: 'Lucida Sans Unicode', sans-serif;
-  font-size: 15px;
-  color: #835b32;
-  border: 2px dotted #ffffff;
-  background-color: #00d8c8;
-}
-
-div.navbar {
-  position: relative;
-  margin-top: 800px;
-  width: 100%;
-  height: auto;
-  font-family: 'Petit Formal Script', cursive;
-  font-size: 25px;
-  color: #ffffff;
-  border: 2px dotted #ffffff;
-  background-color: #ff6842;
-  list-style: none;
+.nav {
+  float: right;
 }
 
 ul {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
 }
 
 li {
-  float: center;
-  text-align: center;
+  position: relative;
+  display: inline-block;
+  font-family: 'Petit Formal Script', cursive;
+  font-size: 20px;
+  color: #00d8c8;
+  bottom: 18px;
+  left: 355px;
+}
+
+#about {
+  padding-right: 40px;
+}
+
+#shop {
+  padding-right: 40px;
+}
+
+#locations {
+  padding-right: 40px;
+}
+
+.content {
+  font-family: 'Lucida Sans Unicode', sans-serif;
+  font-size: 16px;
+  color: #835b32;
+  text-align: left;
+  background-color: #00d8c8;
+  margin-top: 100px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding-right: 50px;
+  padding-left: 350px;
+}
+
+h2 {
+  font-family: 'Petit Formal Script', cursive;
+  font-size: 40px;
+  color: #ffffff;
 }
