@@ -1,8 +1,15 @@
 'use strict';
 
-// Create variable to sales data generated from renderData method by location
-var stores = [];
-// console.log('This is the stores array:', stores);
+//Multiple instances of Store object will be created with values of each new object's properties
+var pike      = new Store('Pike Place', 6.3, 23, 65);
+var seaTac    = new Store('SeaTac', 1.2, 3, 24);
+var seaCenter = new Store('Seattle Center', 3.7, 11, 38);
+var capHill   = new Store('Capitol Hill', 2.3, 20, 38);
+var alki      = new Store('Alki', 4.6, 2, 16);
+
+// Create stores variable equal to array of Store object sales data instances
+var stores = [pike, seaTac, seaCenter, capHill, alki];
+console.log('stores array:', stores);
 
 // Create Store object using constructor notation from literal notation properties
 function Store(name, avg, min, max) {
@@ -13,12 +20,9 @@ function Store(name, avg, min, max) {
   this.totalCookies = 0;
   this.hoursArray = ['6:00 am', '7:00 am', '8:00 am', '9:00 am', '10:00 am', '11:00 am', '12:00 pm', '1:00 pm', '2:00 pm', '3:00 pm', '4:00 pm', '5:00 pm', '6:00 pm', '7:00 pm'];
   this.hourlyCookies = [];
+};
 
-// Push <this> attributes to stores array
-  stores.push(this);
-}
-
-//Create prototype of Store object (allows method of object to be applied in more than one instance and save memory)
+//Creating prototype of Store object allows method of object to be applied in more than one instance and save memory
 
 //Method for generating random number to be used in calculating number of cookies sold per hour (using avg, min, max for each store)
 Store.prototype.generateRandom = function() {
@@ -32,8 +36,10 @@ Store.prototype.cookiesPerHour = function() {
 
 //Method for generating number of total cookies sold per day
 Store.prototype.cookiesPerDay = function() {
+  var hourlySales;
+
   for (var i = 0; i < this.hoursArray.length; i++) {
-    var hourlySales = this.cookiesPerHour();
+    hourlySales = this.cookiesPerHour();
     this.hourlyCookies.push(hourlySales);
     this.totalCookies += hourlySales;
   }
@@ -41,60 +47,99 @@ Store.prototype.cookiesPerDay = function() {
 
 //Method for rendering properties as table with rows displaying hourly sales data for each location
 Store.prototype.renderData = function() {
+  this.cookiesPerDay();
 
-//Create tbody
+//Render sales data as td elements in tr of tbody
   var bodyRow     = document.createElement('tr');
   var rowHeader   = document.createElement('th');
+  var hourlyData   = document.createElement('td');
+  var storeTotal  = document.createElement('td');
 
-  rowHeader.textContent = this.storeName;
-  bodyRow.appendChild(rowHeader);
-
-  for(var j = 0; j < this.hourlyCookies.length; j++) {
-    var tableData = document.createElement('td');
-    tableData.textContent = this.hourlyCookies[j];
-    rowHeader.appendChild(tableData);
+//Loop through each location's data and use it to render tr in tbody
+  for (var l = 0; l < stores.length; l++) {
+//Add content to th referencing location name
+    rowHeader.textContent = this.storeName[l];
+// Append th with location names to tr
+    rowHeader.appendChild(bodyRow);
   }
+
+// Loop through hourly sales to display as hourlyData td content
+  for(var j = 0; j < this.hourlyCookies.length; j++) {
+// Add hourly sales data to td
+    tableData.textContent = this.hourlyCookies[j];
+// Append hourlyData td to th
+    rowHeader.appendChild(hourlyData);
+  }
+
+//Reference total cookies sold per hour to display as storeTotal td content
+  storeTotal.textContent = this.totalCookies;
+//Append storeTotal td to tr
+  bodyRow.appendChild(storeTotal);
 
   return bodyRow;
 };
 
-//Multiple instances of Store object created with values of each new object's properties
-var pike      = new Store('Pike Place', 6.3, 23, 65);
-var seaTac    = new Store('SeaTac', 1.2, 3, 24);
-var seaCenter = new Store('Seattle Center', 3.7, 11, 38);
-var capHill   = new Store('Capitol Hill', 2.3, 20, 38);
-var alki      = new Store('Alki', 4.6, 2, 16);
-
-// Create table using render function which loops through location data to create rows
+// Create table to display location data with hours of operation as columns, store location names as rows, including td created by renderData function
 function createTable() {
-  var salesTable    = document.createElement('table');
+  var salesTable   = document.createElement('table');
+  var salesHead    = document.createElement('thead');
+  var headRow      = document.createElement('tr');
+  var tableHeader  = document.createElement('th');
+  var tableBody    = document.createElement('tbody');
+  var main         = document.getElementById('store_info');
+  var hourContent;
 
-//Create thead
-  var salesHead     = document.createElement('thead');
-  var headerContent = ['', '6:00 am', '7:00 am', '8:00 am', '9:00 am', '10:00 am', '11:00 am', '12:00 pm', '1:00 pm', '2:00 pm', '3:00 pm', '4:00 pm', '5:00 pm', '6:00 pm', '7:00 pm', 'Location Daily Total'];
-  var tableRow      = document.createElement('tr');
-  var tableBody     = document.createElement('tbody');
-
-  salesHead.appendChild(tableRow);
-  // console.log('This is tableRow info:', tableRow);
-
-//Loop through each hour of operation, display as header content
-  for(var k = 0; k < headerContent.length; k++) {
-    var hourHeader = document.createElement('th');
-    hourHeader.textContent += headerContent[k];
-    tableRow.appendChild(hourHeader);
-  }
+// Append thead to sales table
   salesTable.appendChild(salesHead);
-  // console.log('This is the salesTable info:', salesTable);
 
-  for (var l = 0; l < stores.length; l++) {
-    var storeRow = document.createElement('tr');
-    storeRow = stores[l].renderData();
-    console.log(storeRow);
+// Append tr to thead
+  salesHead.appendChild(headRow);
+
+//Loop through each hour of operation, display as th content
+  for(var k = 0; k < hourContent.length; k++) {
+    hourContent = ['', '6:00 am', '7:00 am', '8:00 am', '9:00 am', '10:00 am', '11:00 am', '12:00 pm', '1:00 pm', '2:00 pm', '3:00 pm', '4:00 pm', '5:00 pm', '6:00 pm', '7:00 pm', 'Location Daily Total'];
+//Add hours content to th
+    tableHeader.textContent += hourContent[k];
+// Append th with hours content to tr
+    headRow.appendChild(tableHeader);
   }
 
-  tableBody.appendChild(storeRow);
-  salesTable.appendChild(tableBody);
+// Append tbody to thead
+  salesHead.appendChild(tableBody);
+
+//Append tr from renderData to tbody
+  tableBody.appendChild(bodyRow);
+
+// Append sales table to main element in sales.html
+  main.appendChild(salesTable);
 };
 
 createTable();
+
+// th = document.createElement('th');
+// th.textContent = 'Hour Totals;
+// totalsRow.appendChild.th;
+
+// totalsRow.textContent = 'Hourly Totals';
+
+// for (var hour = 0; hour < stores[0].hourCookies.length; hour++) {
+// console.log(hours[hour + 1]);
+
+// reset total
+// hourTotal = 0;
+// totalTh = createElement('th');
+
+// Loop over stores
+// for (var store = 0; store < stores.length; store++) {
+
+// Set currentStore to current store in array
+// currentStore = stores[store];
+// console.log(stores[store].name + ':' + currentStore.hourlyCookies[hour]);
+
+// Add amount for current hour
+// hourTotal += currentStore.hourlyCookies[hour];
+// }
+
+// totalTh.textcontent = hourTotal;
+// totalsRow.appendChild(totalTh);
+// console.log('Total: ', hourTotal);
