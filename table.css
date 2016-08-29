@@ -1,3 +1,47 @@
+body {
+  background-color: #ffd3ae
+}
+
+.page {
+  margin: 0 auto;
+  width: 100%;
+}
+
+#salmon {
+  position: absolute;
+  opacity: 0.4;
+}
+
+header {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  background-color: #ff6842;
+}
+
+h1 {
+  font-family: 'Petit Formal Script', cursive;
+  font-size: 45px;
+  color: #ffffff;
+  text-align: left;
+  padding-left: 355px;
+}
+
+.content {
+  background-color: #00d8c8;
+  margin-top: 0px;
+  padding-top: 50px;
+  padding-bottom: 100px;
+  padding-right: 50px;
+  padding-left: 350px;
+}
+
+h2 {
+  font-family: 'Petit Formal Script', cursive;
+  font-size: 30px;
+  color: #ffffff;
+}
+
 table {
   border: 1px solid black;
 }
